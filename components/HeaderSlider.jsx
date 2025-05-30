@@ -6,27 +6,27 @@ const HeaderSlider = () => {
   const sliderData = [
     {
       id: 1,
-      title: "Experience Pure Sound - Your Perfect Headphones Awaits!",
-      offer: "Limited Time Offer 30% Off",
-      buttonText1: "Buy now",
-      buttonText2: "Find more",
-      imgSrc: assets.header_headphone_image,
+      title: "Authentic Taste of South India – MaheshG Puliyogare Mix",
+      offer: "Now available – Relish the tradition!",
+      buttonText1: "Buy Now",
+      buttonText2: "Know More",
+      imgSrc: assets.header_puliyogare_image1, // Replace with your image asset
     },
     {
       id: 2,
-      title: "Next-Level Gaming Starts Here - Discover PlayStation 5 Today!",
-      offer: "Hurry up only few lefts!",
-      buttonText1: "Shop Now",
-      buttonText2: "Explore Deals",
-      imgSrc: assets.header_playstation_image,
+      title: "Ready in Minutes – Traditional Puliyogare, Just Mix and Serve!",
+      offer: "Perfect for Breakfast or Quick Meals",
+      buttonText1: "Order Today",
+      buttonText2: "See Recipes",
+      imgSrc: assets.header_puliyogare_image2,
     },
     {
       id: 3,
-      title: "Power Meets Elegance - Apple MacBook Pro is Here for you!",
-      offer: "Exclusive Deal 40% Off",
-      buttonText1: "Order Now",
-      buttonText2: "Learn More",
-      imgSrc: assets.header_macbook_image,
+      title: "Loved Across Karnataka, Tamil Nadu & South India",
+      offer: "Spicy, Tangy & Simply Irresistible",
+      buttonText1: "Taste Now",
+      buttonText2: "Find Stores",
+      imgSrc: assets.header_puliyogare_image3,
     },
   ];
 
@@ -67,7 +67,11 @@ const HeaderSlider = () => {
                 </button>
                 <button className="group flex items-center gap-2 px-6 py-2.5 font-medium">
                   {slide.buttonText2}
-                  <Image className="group-hover:translate-x-1 transition" src={assets.arrow_icon} alt="arrow_icon" />
+                  <Image
+                    className="group-hover:translate-x-1 transition"
+                    src={assets.arrow_icon}
+                    alt="arrow_icon"
+                  />
                 </button>
               </div>
             </div>
@@ -75,7 +79,7 @@ const HeaderSlider = () => {
               <Image
                 className="md:w-72 w-48"
                 src={slide.imgSrc}
-                alt={`Slide ${index + 1}`}
+                alt={`Slide ${index + 1} missingggggggggggg`}
               />
             </div>
           </div>
