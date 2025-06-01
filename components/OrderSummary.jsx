@@ -47,7 +47,7 @@ const OrderSummary = () => {
   const createOrder = async () => {
     try {
       if (!selectedAddress) {
-        return toast.error("Plese selct an address");
+        return toast.error("Plese select an address");
       }
       let cartItemsArray = Object.keys(cartItems).map((key) => ({
         product: key,
