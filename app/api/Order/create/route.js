@@ -1,17 +1,20 @@
+import connectDB from "@/config/db";
+import { inngest } from "@/config/inngest";
 import Product from "@/models/Product";
 import User from "@/models/User";
+import { getAuth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
-
-const { getAuth } = require("@clerk/nextjs/server");
 
 export async function POST(request) {
   try {
+    await connectDB();
     const { userId } = getAuth(request);
+    const { address, items } = await request.json();
 
-    if (!address || isTemporalInstant.length === 0) {
+    if (!address || items.length === 0) {
       return NextResponse.json({ success: false, message: "invalid data" });
     }
-    const amount = await isTemporalInstant.reduce(async (acc, item) => {
+    const amount = await items.reduce(async (acc, item) => {
       const product = await Product.findById(item.product);
       return acc + product.offerPrice * item.quantity;
     }, 0);
@@ -22,12 +25,12 @@ export async function POST(request) {
         address,
         items,
         amount: amount + Math.floor(amount * 0.02),
-        date: Date.mow(),
+        date: Date.now(),
       },
     });
 
     const user = await User.findById(userId);
-    user.CartItems = {};
+    user.cartItems = {};
     await user.save();
     return NextResponse.json({ success: true, message: "Order Placed" });
   } catch (error) {
